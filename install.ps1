@@ -1,6 +1,17 @@
 # Installs all of Asher's Claude Code plugins on this computer.
 # Run in PowerShell:  irm https://raw.githubusercontent.com/asherniedzwiedz-sys/my-plugins/main/install.ps1 | iex
 
+# Claude Code installs to %USERPROFILE%\.local\bin, which isn't always on PATH
+$claudeBin = Join-Path $env:USERPROFILE ".local\bin"
+if (-not (Get-Command claude -ErrorAction SilentlyContinue) -and (Test-Path (Join-Path $claudeBin "claude.exe"))) {
+    $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+    if ($userPath -notlike "*$claudeBin*") {
+        [Environment]::SetEnvironmentVariable("Path", "$userPath;$claudeBin", "User")
+        Write-Host "Added $claudeBin to your PATH."
+    }
+    $env:Path = "$env:Path;$claudeBin"
+}
+
 if (-not (Get-Command claude -ErrorAction SilentlyContinue)) {
     Write-Host "Claude Code not found. Installing it..."
     irm https://claude.ai/install.ps1 | iex
