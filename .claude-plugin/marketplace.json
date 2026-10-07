@@ -15,8 +15,8 @@
     {
       "name": "agent-skills",
       "source": {
-        "source": "github",
-        "repo": "addyosmani/agent-skills"
+        "source": "url",
+        "url": "https://github.com/addyosmani/agent-skills.git"
       },
       "description": "Addy Osmani's engineering skills: spec, plan, build, test, review and ship."
     }

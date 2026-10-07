@@ -25,7 +25,8 @@ If it installs Claude Code first, open a new PowerShell window and run it again.
 ## Add a plugin later
 
 - Another GitHub plugin: add an entry to `.claude-plugin/marketplace.json`, e.g.
-  `{ "name": "x", "source": { "source": "github", "repo": "owner/repo" } }`
+  `{ "name": "x", "source": { "source": "url", "url": "https://github.com/owner/repo.git" } }`
+  (use the https `url` form: the `github` form tries SSH first, which fails on PCs without SSH keys)
 - A new skill of my own: add a folder with a `SKILL.md` under `plugins/asher-skills/skills/`, and bump `version` in `plugins/asher-skills/.claude-plugin/plugin.json`.
 
 Then on each computer: `claude plugin marketplace update asher-plugins` and install or update the plugin.
