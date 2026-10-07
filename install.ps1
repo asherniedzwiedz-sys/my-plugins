@@ -7,7 +7,9 @@ $candidates = @(
     (Join-Path "$env:SystemDrive\Users\$env:USERNAME" ".local\bin"),
     (Join-Path $env:USERPROFILE ".local\bin"),
     (Join-Path $HOME ".local\bin")
-) | Select-Object -Unique
+)
+if ($env:HOME) { $candidates += (Join-Path $env:HOME ".local\bin") }
+$candidates = $candidates | Select-Object -Unique
 foreach ($claudeBin in $candidates) {
     if (-not (Get-Command claude -ErrorAction SilentlyContinue) -and (Test-Path (Join-Path $claudeBin "claude.exe"))) {
         $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
