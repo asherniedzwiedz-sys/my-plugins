@@ -1,0 +1,8 @@
+{
+  "name": "asher-skills",
+  "displayName": "Asher's skills",
+  "version": "1.0.0",
+  "description": "Asher's own skills: clean, humanizer, cli-anything, anydoc, handoff, make-plan and do.",
+  "author": { "name": "Asher Niedzwiedz", "url": "https://github.com/asherniedzwiedz-sys" },
+  "license": "MIT"
+}

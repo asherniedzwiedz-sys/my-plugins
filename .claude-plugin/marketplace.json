@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "asher-plugins",
+  "description": "Asher's master list of Claude Code plugins: his own skills plus the third-party plugins he uses.",
+  "owner": {
+    "name": "Asher Niedzwiedz",
+    "url": "https://github.com/asherniedzwiedz-sys"
+  },
+  "plugins": [
+    {
+      "name": "asher-skills",
+      "source": "./plugins/asher-skills",
+      "description": "Asher's own skills: clean, humanizer, cli-anything, anydoc, handoff, make-plan and do."
+    },
+    {
+      "name": "agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "addyosmani/agent-skills"
+      },
+      "description": "Addy Osmani's engineering skills: spec, plan, build, test, review and ship."
+    }
+  ]
+}
