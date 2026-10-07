@@ -28,6 +28,14 @@ if (-not (Get-Command claude -ErrorAction SilentlyContinue)) {
     return
 }
 
+# Plugins are downloaded with git
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    Write-Host "Git not found. Installing it..."
+    winget install --id Git.Git -e --source winget --accept-source-agreements --accept-package-agreements
+    Write-Host "Done. Close PowerShell, open a new window and run this script again."
+    return
+}
+
 # This repo: my own skills + agent-skills
 claude plugin marketplace add asherniedzwiedz-sys/my-plugins
 claude plugin install asher-skills@asher-plugins
