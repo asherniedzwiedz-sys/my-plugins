@@ -19,6 +19,14 @@
         "url": "https://github.com/addyosmani/agent-skills.git"
       },
       "description": "Addy Osmani's engineering skills: spec, plan, build, test, review and ship."
+    },
+    {
+      "name": "resume-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/paramchoudhary/resumeskills.git"
+      },
+      "description": "paramchoudhary/resumeskills: 22 resume and job-search skills (ATS optimizer, bullet writer, tailoring, cover letters, LinkedIn, interview prep, salary negotiation)."
     }
   ]
 }

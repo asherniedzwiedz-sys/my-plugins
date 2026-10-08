@@ -40,6 +40,7 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 claude plugin marketplace add asherniedzwiedz-sys/my-plugins
 claude plugin install asher-skills@asher-plugins
 claude plugin install agent-skills@asher-plugins
+claude plugin install resume-skills@asher-plugins
 
 # Anthropic's official plugins
 claude plugin marketplace add anthropics/claude-plugins-official

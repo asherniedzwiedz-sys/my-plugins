@@ -18,6 +18,7 @@ If it installs Claude Code first, open a new PowerShell window and run it again.
 |---|---|
 | `asher-skills` | My skills: `/clean`, `/humanizer`, `/cli-anything`, `/anydoc`, `/handoff`, `/make-plan`, `/do` |
 | `agent-skills` | addyosmani/agent-skills: spec, plan, build, test, review, ship |
+| `resume-skills` | paramchoudhary/resumeskills: resume, cover letter, LinkedIn, interview and offer skills |
 | `claude-code-setup` | Anthropic's project setup recommender (installed from Anthropic's official marketplace) |
 | `claude-mem` | thedotmack/claude-mem: automatic memory across sessions (installed from its own marketplace) |
 | `find-skills` | vercel-labs/skills: finds and installs skills on request |
