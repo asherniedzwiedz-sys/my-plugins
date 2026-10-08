@@ -15,9 +15,9 @@ The user shouldn't have to attach the resume every time. Use the first one found
 
 1. A resume the user names, attaches or pastes in this message (this wins, even over a master).
 2. A master resume in the working folder or its `Resumes/` subfolder: a file with "master" in its name (`.docx`, `.pdf` or `.md`); otherwise the most recently modified file with "resume" in its name, ignoring anything under `applications/`.
-3. `~/Resumes/` (the user's home folder), with the same rule.
+3. `~/Documents/Resumes/` (Asher's master lives at `Documents\Resumes\Asher_Niedzwiedz_Resume_MASTER.pdf`), then `~/Resumes/`, with the same rule. Use the real user folder (`C:\Users\<name>`), because HOME can point elsewhere on this PC.
 
-If none is found, ask for it in one short question and suggest saving it as `Resumes/master_resume.docx` so it's found automatically next time. If the posting is missing, ask for it. Say in one line which resume file was used.
+If none is found, ask for it in one short question and suggest saving it in `Documents\Resumes\` with "MASTER" in the name so it's found automatically next time. If the posting is missing, ask for it. Say in one line which resume file was used.
 
 ## Rules that override every step
 
