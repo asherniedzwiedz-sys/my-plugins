@@ -1,7 +1,7 @@
 {
   "name": "asher-skills",
   "displayName": "Asher's skills",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "Asher's own skills: apply, clean, humanizer, cli-anything, anydoc, handoff, make-plan and do.",
   "author": {
     "name": "Asher Niedzwiedz",

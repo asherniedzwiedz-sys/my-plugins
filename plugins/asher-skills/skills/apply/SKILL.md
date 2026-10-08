@@ -46,8 +46,13 @@ Load each skill with the Skill tool as `resume-skills:<name>` and follow it for 
 2. **Tailor** (`resume-tailor`): reorder and reword sections and bullets to lead with what this posting cares about. Apply the Step 0 decision here (`tech-resume-optimizer` for Software, partially for Mixed).
 3. **Strengthen bullets** (`resume-bullet-writer`): action verb, what was done, how, and the result. Apply the metrics rule above. Skip `resume-quantifier`, which estimates numbers.
 4. **ATS check** (`resume-ats-optimizer`): confirm the posting's must-have keywords appear naturally where they're true, use standard section headings, and drop tables, text boxes and graphics that ATS parsers miss. List any must-have keyword the user genuinely lacks as a gap instead of adding it.
-5. **Cover letter** (`cover-letter-generator`): one page, specific to this company and role, drawn only from the resume and the posting. Then load `humanizer` (from this same plugin, `asher-skills:humanizer`) in embedded mode on the letter so it doesn't read as AI-written, with no em dashes. Skip if the user said "resume only".
-6. **Save versions** (`resume-version-manager`): keep the original untouched as the master. Save outputs under `applications/<Company>-<Role>/` next to the resume (or in the working directory):
+5. **Fill the page**: render the resume to PDF (Word via `docx2pdf`, or LibreOffice `soffice --headless --convert-to pdf`) and measure the blank space at the bottom of the last page (with pdfplumber: page height minus the lowest word's bottom, minus the bottom margin). If more than about 1 inch is empty, fill it, in this order:
+   1. Bring back true content from the master that tailoring cut, most relevant to the posting first: bullets, projects, relevant coursework, lab tools and equipment, skills.
+   2. Expand the most relevant bullets with real detail that's already in the master (tools, methods, scope).
+   3. Only as a last resort, loosen the layout slightly: a little more space between sections, or body font up to 11 pt.
+   Never invent content to fill space. Keep the same page count as the master (one page unless the master is longer), so nothing spills onto a new page. Re-render and repeat until the bottom gap is about half an inch or less.
+6. **Cover letter** (`cover-letter-generator`): one page, specific to this company and role, drawn only from the resume and the posting. Then load `humanizer` (from this same plugin, `asher-skills:humanizer`) in embedded mode on the letter so it doesn't read as AI-written, with no em dashes. Skip if the user said "resume only".
+7. **Save versions** (`resume-version-manager`): keep the original untouched as the master. Save outputs under `applications/<Company>-<Role>/` next to the resume (or in the working directory):
    - `<Name>_Resume_<Company>.<ext>`
    - `<Name>_CoverLetter_<Company>.docx`
    - `notes.md` with the match score, gaps and the Step 0 decision
