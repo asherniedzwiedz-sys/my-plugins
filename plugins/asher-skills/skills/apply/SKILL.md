@@ -7,9 +7,17 @@ description: One-shot job application pass - analyze a job posting, tailor the r
 
 Runs the resume-skills plugin (paramchoudhary/resumeskills) as one pipeline so the user doesn't call each skill by hand.
 
-Usage: `/apply` plus a job posting (pasted text, a file or a URL) and the resume (a file, a path, or the master resume from an earlier run). Options the user may add in plain words: "resume only", "cover letter only", "just analyze".
+Usage: `/apply` plus a job posting (pasted text, a file or a URL). Options the user may add in plain words: "resume only", "cover letter only", "just analyze".
 
-If the posting or the resume is missing, ask for it in one short question and stop.
+## Finding the resume
+
+The user shouldn't have to attach the resume every time. Use the first one found:
+
+1. A resume the user names, attaches or pastes in this message (this wins, even over a master).
+2. A master resume in the working folder or its `Resumes/` subfolder: a file with "master" in its name (`.docx`, `.pdf` or `.md`); otherwise the most recently modified file with "resume" in its name, ignoring anything under `applications/`.
+3. `~/Resumes/` (the user's home folder), with the same rule.
+
+If none is found, ask for it in one short question and suggest saving it as `Resumes/master_resume.docx` so it's found automatically next time. If the posting is missing, ask for it. Say in one line which resume file was used.
 
 ## Rules that override every step
 
@@ -48,7 +56,7 @@ Load each skill with the Skill tool as `resume-skills:<name>` and follow it for 
 
 Keep it short:
 
-1. The role-type line from Step 0
+1. The role-type line from Step 0 and which resume was used
 2. Match score and the top 3 gaps
 3. The saved files (send them with SendUserFile when not running in Claude Code)
 
