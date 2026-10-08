@@ -9,6 +9,8 @@ Runs the resume-skills plugin (paramchoudhary/resumeskills) as one pipeline so t
 
 Usage: `/apply` plus a job posting (pasted text, a file or a URL). Options the user may add in plain words: "resume only", "cover letter only", "just analyze".
 
+**Quick apply = resume only.** If the user says "quick apply", or the posting shows a quick-apply option (Quick Apply, Easy Apply, 1-click apply, Apply with resume, e.g. on LinkedIn, Indeed or Handshake), make only the tailored resume: skip the company research and cover letter (step 6). Note "Quick apply: resume only" in the first line of the output.
+
 ## Finding the resume
 
 The user shouldn't have to attach the resume every time. Use the first one found:
@@ -51,7 +53,7 @@ Load each skill with the Skill tool as `resume-skills:<name>` and follow it for 
    2. Expand the most relevant bullets with real detail that's already in the master (tools, methods, scope).
    3. Only as a last resort, loosen the layout slightly: a little more space between sections, or body font up to 11 pt.
    Never invent content to fill space. Keep the same page count as the master (one page unless the master is longer), so nothing spills onto a new page. Re-render and repeat until the bottom gap is about half an inch or less.
-6. **Cover letter** (`cover-letter-generator`; skip if the user said "resume only"):
+6. **Cover letter** (`cover-letter-generator`; skip if the user said "resume only" or it's a quick apply):
    1. **Research the company** with WebSearch: what it makes, the team or division behind the role, recent products or news, and its stated mission or values. Use only facts the search turns up.
    2. **Write it**: one page at most, in normal business-letter layout. Cover why this company (specific, researched details, not generic praise), the two or three most relevant experiences from the resume told with more detail than the resume has room for, relevant coursework mapped to the job's duties, what Asher would bring to the team and learn from it, his availability or graduation date if the resume gives it, and a short close. Anything else that genuinely helps the case is welcome as long as it's true: company facts from the research, and experience or skills from the resume.
    3. **Humanize**: load `asher-skills:humanizer` in embedded mode on the letter so it doesn't read as AI-written, with no em dashes.
