@@ -16,7 +16,7 @@ If it installs Claude Code first, open a new PowerShell window and run it again.
 
 | Plugin | What it does |
 |---|---|
-| `asher-skills` | My skills: `/clean`, `/humanizer`, `/cli-anything`, `/anydoc`, `/handoff`, `/make-plan`, `/do` |
+| `asher-skills` | My skills: `/apply` (full resume + cover letter pass for a job posting; uses resume-skills), `/clean`, `/humanizer`, `/cli-anything`, `/anydoc`, `/handoff`, `/make-plan`, `/do` |
 | `agent-skills` | addyosmani/agent-skills: spec, plan, build, test, review, ship |
 | `resume-skills` | paramchoudhary/resumeskills: resume, cover letter, LinkedIn, interview and offer skills |
 | `claude-code-setup` | Anthropic's project setup recommender (installed from Anthropic's official marketplace) |
