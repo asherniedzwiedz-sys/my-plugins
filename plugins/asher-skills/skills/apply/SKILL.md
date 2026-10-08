@@ -14,7 +14,7 @@ If the posting or the resume is missing, ask for it in one short question and st
 ## Rules that override every step
 
 - Never invent experience, skills, tools, employers, dates or numbers. Reword and reorder what's there; don't add claims.
-- A metric the resume doesn't support stays out. If a number would clearly help, write the bullet without it and list it under "Numbers to confirm" so the user can fill in a real value. Never keep an estimated number silently.
+- Use only numbers already in the resume or that follow directly from its facts (counts, layer counts, team size, part numbers). Never invent or estimate a metric. When there's no real number, make the bullet strong without one (specific tools, scope and outcome) and move on. Don't ask the user for numbers or give them a list to fill in.
 - Keep the user's resume format: a .docx comes back as a .docx with the same layout, a PDF source comes back as a .docx plus PDF, and plain text stays plain text.
 - Never overwrite the original resume.
 
@@ -36,13 +36,13 @@ Load each skill with the Skill tool as `resume-skills:<name>` and follow it for 
 
 1. **Analyze** (`job-description-analyzer`): extract required and preferred qualifications and keywords, score the match, and list the gaps. Stop here if the user said "just analyze".
 2. **Tailor** (`resume-tailor`): reorder and reword sections and bullets to lead with what this posting cares about. Apply the Step 0 decision here (`tech-resume-optimizer` for Software, partially for Mixed).
-3. **Strengthen bullets** (`resume-bullet-writer`): action verb, what was done, how, and the result. Apply the metrics rule above.
+3. **Strengthen bullets** (`resume-bullet-writer`): action verb, what was done, how, and the result. Apply the metrics rule above. Skip `resume-quantifier`, which estimates numbers.
 4. **ATS check** (`resume-ats-optimizer`): confirm the posting's must-have keywords appear naturally where they're true, use standard section headings, and drop tables, text boxes and graphics that ATS parsers miss. List any must-have keyword the user genuinely lacks as a gap instead of adding it.
 5. **Cover letter** (`cover-letter-generator`): one page, specific to this company and role, drawn only from the resume and the posting. Then load `humanizer` (from this same plugin, `asher-skills:humanizer`) in embedded mode on the letter so it doesn't read as AI-written, with no em dashes. Skip if the user said "resume only".
 6. **Save versions** (`resume-version-manager`): keep the original untouched as the master. Save outputs under `applications/<Company>-<Role>/` next to the resume (or in the working directory):
    - `<Name>_Resume_<Company>.<ext>`
    - `<Name>_CoverLetter_<Company>.docx`
-   - `notes.md` with the match score, gaps, "Numbers to confirm", and the Step 0 decision
+   - `notes.md` with the match score, gaps and the Step 0 decision
 
 ## Output to the user
 
@@ -50,7 +50,6 @@ Keep it short:
 
 1. The role-type line from Step 0
 2. Match score and the top 3 gaps
-3. "Numbers to confirm", if any
-4. The saved files (send them with SendUserFile when not running in Claude Code)
+3. The saved files (send them with SendUserFile when not running in Claude Code)
 
 Don't recap each step.
