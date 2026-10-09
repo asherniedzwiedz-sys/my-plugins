@@ -42,10 +42,17 @@ claude plugin install asher-skills@asher-plugins
 claude plugin install agent-skills@asher-plugins
 claude plugin install resume-skills@asher-plugins
 claude plugin install ponytail@asher-plugins
+claude plugin install founder-skill@asher-plugins
 
 # Anthropic's official plugins
 claude plugin marketplace add anthropics/claude-plugins-official
 claude plugin install claude-code-setup@claude-plugins-official
+claude plugin install superpowers@claude-plugins-official
+claude plugin install feature-dev@claude-plugins-official
+claude plugin install commit-commands@claude-plugins-official
+claude plugin install context7@claude-plugins-official
+claude plugin install security-guidance@claude-plugins-official
+claude plugin install claude-md-management@claude-plugins-official
 
 # claude-mem needs its own marketplace (it runs a background service)
 claude plugin marketplace add thedotmack/claude-mem

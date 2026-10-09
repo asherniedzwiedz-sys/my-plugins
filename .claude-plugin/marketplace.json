@@ -35,6 +35,14 @@
         "url": "https://github.com/DietrichGebert/ponytail.git"
       },
       "description": "DietrichGebert/ponytail: lazy senior dev mode, simplest code that works; /ponytail-review and /ponytail-audit. Say \"stop ponytail\" to turn it off for a session."
+    },
+    {
+      "name": "founder-skill",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Jakeschincariol/founder-skill.git"
+      },
+      "description": "Jakeschincariol/founder-skill: 11 skills to test a business idea before launch: board, competitor scout, 100-buyer consumer panel, pricing, offer, CFO, marketing, brand, ops, launch plan and business plan."
     }
   ]
 }
