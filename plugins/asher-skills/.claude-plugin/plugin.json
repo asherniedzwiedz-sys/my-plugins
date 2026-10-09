@@ -1,8 +1,8 @@
 {
   "name": "asher-skills",
   "displayName": "Asher's skills",
-  "version": "1.6.0",
-  "description": "Asher's own skills: apply, quick-apply, clean, humanizer, cli-anything, anydoc, handoff, make-plan and do.",
+  "version": "1.7.0",
+  "description": "Asher's own skills: apply, quick-apply, clean, humanizer, prompt-master, cli-anything, anydoc, handoff, make-plan and do.",
   "author": {
     "name": "Asher Niedzwiedz",
     "url": "https://github.com/asherniedzwiedz-sys"

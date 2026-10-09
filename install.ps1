@@ -41,6 +41,7 @@ claude plugin marketplace add asherniedzwiedz-sys/my-plugins
 claude plugin install asher-skills@asher-plugins
 claude plugin install agent-skills@asher-plugins
 claude plugin install resume-skills@asher-plugins
+claude plugin install ponytail@asher-plugins
 
 # Anthropic's official plugins
 claude plugin marketplace add anthropics/claude-plugins-official
@@ -61,5 +62,16 @@ if (Get-Command npx -ErrorAction SilentlyContinue) {
 } else {
     Write-Host "Skipped find-skills: install Node first (winget install OpenJS.NodeJS.LTS), then rerun."
 }
+
+# Python tools (markitdown, graphify) are installed with uv
+if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
+    Write-Host "uv not found. Installing it for markitdown and graphify..."
+    winget install --id astral-sh.uv -e --source winget --accept-source-agreements --accept-package-agreements
+    Write-Host "Everything else is installed. Close PowerShell, open a new window and run this script once more to add markitdown and graphify."
+    return
+}
+uv tool install --upgrade "markitdown[all]"
+uv tool install --upgrade graphifyy
+graphify install --platform windows
 
 Write-Host "All set. Restart Claude Code."

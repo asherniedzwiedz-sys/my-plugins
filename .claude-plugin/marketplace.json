@@ -10,7 +10,7 @@
     {
       "name": "asher-skills",
       "source": "./plugins/asher-skills",
-      "description": "Asher's own skills: apply, quick-apply, clean, humanizer, cli-anything, anydoc, handoff, make-plan and do."
+      "description": "Asher's own skills: apply, quick-apply, clean, humanizer, prompt-master, cli-anything, anydoc, handoff, make-plan and do."
     },
     {
       "name": "agent-skills",
@@ -27,6 +27,14 @@
         "url": "https://github.com/paramchoudhary/resumeskills.git"
       },
       "description": "paramchoudhary/resumeskills: 22 resume and job-search skills (ATS optimizer, bullet writer, tailoring, cover letters, LinkedIn, interview prep, salary negotiation)."
+    },
+    {
+      "name": "ponytail",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/DietrichGebert/ponytail.git"
+      },
+      "description": "DietrichGebert/ponytail: lazy senior dev mode, simplest code that works; /ponytail-review and /ponytail-audit. Say \"stop ponytail\" to turn it off for a session."
     }
   ]
 }

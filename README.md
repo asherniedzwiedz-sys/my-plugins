@@ -16,12 +16,15 @@ If it installs Claude Code first, open a new PowerShell window and run it again.
 
 | Plugin | What it does |
 |---|---|
-| `asher-skills` | My skills: `/apply` (full resume + cover letter pass for a job posting; uses resume-skills), `/quick-apply` (same without the cover letter), `/clean`, `/humanizer`, `/cli-anything`, `/anydoc`, `/handoff`, `/make-plan`, `/do` |
+| `asher-skills` | My skills: `/apply` (full resume + cover letter pass for a job posting; uses resume-skills), `/quick-apply` (same without the cover letter), `/clean`, `/humanizer`, `/prompt-master` (from nidhinjs/prompt-master), `/cli-anything`, `/anydoc`, `/handoff`, `/make-plan`, `/do` |
 | `agent-skills` | addyosmani/agent-skills: spec, plan, build, test, review, ship |
 | `resume-skills` | paramchoudhary/resumeskills: resume, cover letter, LinkedIn, interview and offer skills |
+| `ponytail` | DietrichGebert/ponytail: always-on "simplest code that works" mode, plus /ponytail-review and /ponytail-audit (say "stop ponytail" to turn it off) |
 | `claude-code-setup` | Anthropic's project setup recommender (installed from Anthropic's official marketplace) |
 | `claude-mem` | thedotmack/claude-mem: automatic memory across sessions (installed from its own marketplace) |
 | `rea` | Morluto/rea: reverse-engineer apps, binaries and websites (MCP server + skill, set up by install.ps1; native binaries on Windows need Ghidra) |
+| `markitdown` | microsoft/markitdown: files and URLs to Markdown (CLI via uv; `/anydoc` uses it as a fallback) |
+| `graphify` | Graphify-Labs/graphify: `/graphify .` maps a project into a clickable knowledge graph (CLI via uv + skill) |
 | `find-skills` | vercel-labs/skills: finds and installs skills on request |
 
 ## Add a plugin later

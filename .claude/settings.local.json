@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /mnt/user-data/outputs)",
+      "Bash(cp \"/root/.claude/uploads/037350c7-d413-5596-8c89-8b84ee1523da/21747af4-Asher_Niedzwiedz_Resume_MASTER.pdf\" /mnt/user-data/outputs/Asher_Niedzwiedz_Resume_MASTER.pdf)"
+    ]
+  }
+}
