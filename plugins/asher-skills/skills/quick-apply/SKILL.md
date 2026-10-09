@@ -1,13 +1,13 @@
 ---
-name: apply
-description: One-shot job application pass - analyze a job posting, tailor the resume, rewrite bullets, check ATS, write a cover letter and save the versions, deciding automatically whether the tech-resume optimizer fits the role. Use when the user runs /apply or asks to tailor a resume or write a cover letter for a job posting.
+name: quick-apply
+description: Resume-only job application pass - analyze a job posting, tailor the resume, rewrite bullets, check ATS, fill the page and save the version, with no cover letter. Use when the user runs /quick-apply or asks for a quick apply, Easy Apply or resume-only tailoring for a job.
 ---
 
-# /apply
+# /quick-apply
 
-Runs the resume-skills plugin (paramchoudhary/resumeskills) as one pipeline so the user doesn't call each skill by hand. For a resume without a cover letter, use `/quick-apply`.
+The same resume pipeline as `/apply` (resume-skills plugin, paramchoudhary/resumeskills), without the cover letter. Use it for Quick Apply / Easy Apply postings or whenever only a tailored resume is needed.
 
-Usage: `/apply` plus a job posting (pasted text, a file or a URL). Options the user may add in plain words: "resume only", "cover letter only", "just analyze".
+Usage: `/quick-apply` plus a job posting (pasted text, a file or a URL). "Just analyze" stops after step 1.
 
 ## Finding the resume
 
@@ -25,6 +25,7 @@ If none is found, ask for it in one short question and suggest saving it in `Doc
 - Use only numbers already in the resume or that follow directly from its facts (counts, layer counts, team size, part numbers). Never invent or estimate a metric. When there's no real number, make the bullet strong without one (specific tools, scope and outcome) and move on. Don't ask the user for numbers or give them a list to fill in.
 - Keep the user's resume format: a .docx comes back as a .docx with the same layout, a PDF source comes back as a .docx plus PDF, and plain text stays plain text.
 - Never overwrite the original resume.
+- Never write a cover letter in this skill.
 
 ## Step 0: Decide whether the tech-resume optimizer applies
 
@@ -51,14 +52,8 @@ Load each skill with the Skill tool as `resume-skills:<name>` and follow it for 
    2. Expand the most relevant bullets with real detail that's already in the master (tools, methods, scope).
    3. Only as a last resort, loosen the layout slightly: a little more space between sections, or body font up to 11 pt.
    Never invent content to fill space. Keep the same page count as the master (one page unless the master is longer), so nothing spills onto a new page. Re-render and repeat until the bottom gap is about half an inch or less.
-6. **Cover letter** (`cover-letter-generator`; skip if the user said "resume only"):
-   1. **Research the company** with WebSearch: what it makes, the team or division behind the role, recent products or news, and its stated mission or values. Use only facts the search turns up.
-   2. **Write it**: one page at most, in normal business-letter layout. Cover why this company (specific, researched details, not generic praise), the two or three most relevant experiences from the resume told with more detail than the resume has room for, relevant coursework mapped to the job's duties, what Asher would bring to the team and learn from it, his availability or graduation date if the resume gives it, and a short close. Anything else that genuinely helps the case is welcome as long as it's true: company facts from the research, and experience or skills from the resume.
-   3. **Humanize**: load `asher-skills:humanizer` in embedded mode on the letter so it doesn't read as AI-written, with no em dashes.
-   4. **Fill check**: render it to PDF and find the lowest line of text. It must reach at least two thirds of the way down the page. If it's short, add more of the helpful content above, in this order: a deeper example from a project or course, a sharper tie between his experience and the role's duties, more specific company details from the research. Keep normal spacing (don't stretch the layout like the resume step), never invent experience, and keep it to one page. Re-run humanizer on new paragraphs, then re-check.
-7. **Save versions** (`resume-version-manager`): keep the original untouched as the master. Save outputs under `applications/<Company>-<Role>/` next to the resume (or in the working directory):
+6. **Save versions** (`resume-version-manager`): keep the original untouched as the master. Save outputs under `applications/<Company>-<Role>/` next to the resume (or in the working directory):
    - `<Name>_Resume_<Company>.<ext>`
-   - `<Name>_CoverLetter_<Company>.docx`
    - `notes.md` with the match score, gaps and the Step 0 decision
 
 ## Output to the user
