@@ -50,6 +50,11 @@ claude plugin install claude-code-setup@claude-plugins-official
 claude plugin marketplace add thedotmack/claude-mem
 claude plugin install claude-mem@thedotmack
 
+# REA: reverse-engineering tools (MCP server + skill), needs Node 22.19+
+if (Get-Command npx -ErrorAction SilentlyContinue) {
+    npx -y rea-agents@latest setup --client claude_code --yes
+}
+
 # find-skills (needs Node)
 if (Get-Command npx -ErrorAction SilentlyContinue) {
     npx skills add vercel-labs/skills --skill find-skills -g -y

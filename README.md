@@ -21,6 +21,7 @@ If it installs Claude Code first, open a new PowerShell window and run it again.
 | `resume-skills` | paramchoudhary/resumeskills: resume, cover letter, LinkedIn, interview and offer skills |
 | `claude-code-setup` | Anthropic's project setup recommender (installed from Anthropic's official marketplace) |
 | `claude-mem` | thedotmack/claude-mem: automatic memory across sessions (installed from its own marketplace) |
+| `rea` | Morluto/rea: reverse-engineer apps, binaries and websites (MCP server + skill, set up by install.ps1; native binaries on Windows need Ghidra) |
 | `find-skills` | vercel-labs/skills: finds and installs skills on request |
 
 ## Add a plugin later
