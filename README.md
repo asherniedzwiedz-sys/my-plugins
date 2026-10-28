@@ -26,7 +26,15 @@ If it installs Claude Code first, open a new PowerShell window and run it again.
 | `rea` | Morluto/rea: reverse-engineer apps, binaries and websites (MCP server + skill, set up by install.ps1; native binaries on Windows need Ghidra) |
 | `markitdown` | microsoft/markitdown: files and URLs to Markdown (CLI via uv; `/anydoc` uses it as a fallback) |
 | `graphify` | Graphify-Labs/graphify: `/graphify .` maps a project into a clickable knowledge graph (CLI via uv + skill) |
+| `godot-mcp` | Coding-Solo/godot-mcp: Claude can launch, run and debug Godot projects (MCP server, user scope; set `GODOT_PATH` if Godot isn't found) |
 | `find-skills` | vercel-labs/skills: finds and installs skills on request |
+
+## Game dev (per project, not installed globally)
+
+- **Claude-Code-Game-Studios** (Donchitos): a 49-agent, 74-skill "game studio" `.claude/` setup. Start a new game repo from it (copy its `.claude/`, `CLAUDE.md` and folder layout) instead of installing it everywhere.
+- **UnrealClaude** (Natfii): Unreal Engine 5.7 editor plugin with Claude chat and 20+ MCP tools. Build it from source with UE's `RunUAT BuildPlugin` and drop it into the game's `Plugins/` folder.
+- **ACE-Step 1.5** (ace-step): open-source music generator for game soundtracks. Runs locally on a GPU (clone + `uv sync`, or the Windows portable package); its repo has its own Claude skills. Free web version: acemusic.ai.
+- **Audio2Face-3D** (NVIDIA): audio-to-facial-animation SDK, models and Maya/UE5 plugins. Needs an NVIDIA GPU.
 
 ## Add a plugin later
 

@@ -63,6 +63,11 @@ if (Get-Command npx -ErrorAction SilentlyContinue) {
     npx -y rea-agents@latest setup --client claude_code --yes
 }
 
+# Godot MCP: lets Claude run, debug and edit Godot projects (needs Godot installed to do anything)
+if (Get-Command npx -ErrorAction SilentlyContinue) {
+    claude mcp add --scope user godot -- npx -y @coding-solo/godot-mcp
+}
+
 # find-skills (needs Node)
 if (Get-Command npx -ErrorAction SilentlyContinue) {
     npx skills add vercel-labs/skills --skill find-skills -g -y
